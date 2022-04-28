@@ -1,0 +1,21 @@
+[
+	{
+        "caption": "Terminus: Open Default Shell in Horizontal Split Tab",
+        "command": "terminus_open",
+        "args": {
+            "post_window_hooks": [
+                ["carry_file_to_pane", {"direction": "down"}],
+            ],
+        },
+    },
+
+    {
+        "caption": "Terminus: Open Default Shell in Vertical Split Tab",
+        "command": "terminus_open",
+        "args": {
+            "post_window_hooks": [
+                ["carry_file_to_pane", {"direction": "right"}],
+            ],
+        },
+    },
+]

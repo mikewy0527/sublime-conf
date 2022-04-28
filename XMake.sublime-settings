@@ -1,0 +1,4 @@
+// These settings override both User and Default settings for the XMake syntax
+{
+	"translate_tabs_to_spaces": true,
+}

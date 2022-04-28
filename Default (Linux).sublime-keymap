@@ -1,0 +1,130 @@
+[
+    { "keys": ["alt"], "command": "toggle_menu" },
+    { "keys": ["ctrl+k", "ctrl+m"], "command": "toggle_minimap" },
+
+    // prettyJSON
+	{ "keys": ["ctrl+alt+m"], "command": "pretty_json" },
+	{ "keys": ["ctrl+alt+shift+m"], "command": "un_pretty_json" },
+
+    // Use tab to escape auto-completed quotes
+    {
+        "keys": ["tab"], "command": "move", "args": {"by": "characters", "forward": true},
+        "context": [
+            { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+            { "key": "auto_complete_visible", "operator": "not_equal", "operand": true },
+            { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+            { "key": "following_text", "operator": "regex_contains", "operand": "^(\\]|\\)|\\}|>|\\\"|'|\\;)", "match_all": true },
+            { "key": "has_next_field", "operator": "not_equal", "operand": true }
+        ]
+    },
+
+    // Setting tab as auto-complete select key
+    {
+        "keys": ["tab"],
+        "command": "move",
+        "args": {"by": "lines", "forward": true},
+        "context": [{"key": "auto_complete_visible"}]
+    },
+    {
+        "keys": ["shift+tab"],
+        "command": "move",
+        "args": {"by": "lines", "forward": false},
+        "context": [{"key": "auto_complete_visible"}]
+    },
+
+    // Toggle Terminus panel
+	{ "keys": ["ctrl+alt+`"], "command": "toggle_terminus_panel" },
+
+    // Open Terminus in a horizontal split view
+    {
+        "keys": ["alt+shift+h"],
+        "command": "terminus_open",
+        "args": {
+            "post_window_hooks": [
+                ["carry_file_to_pane", {"direction": "down"}],
+            ],
+        },
+    },
+
+    // Open Terminus in a vertical split view
+    {
+        "keys": ["alt+shift+v"],
+        "command": "terminus_open",
+        "args": {
+            "post_window_hooks": [
+                ["carry_file_to_pane", {"direction": "right"}],
+            ],
+        },
+    },
+
+    // Close Terminus of specific tagged terminal
+    {
+        "keys": ["ctrl+alt+w"], "command": "terminus_close",
+        "context": [
+            { "key": "terminus_view.tag", "operator": "equal", "operand": "python-repl" },
+        ],
+    },
+
+    // Send a newline to the Terminus Python REPL, if it's open
+    { 
+        "keys": ["shift+ctrl+enter"], "command": "terminus_send_string",
+        "args": { "string": "\n", "tag": "python-repl" },
+        "context": [
+            { "key": "terminus_tag.exists", "operand": "python-repl" },
+            { "key": "selector", "operator": "equal", "operand": "source.python" },
+        ],
+    },
+
+    // Open a Python REPL using a Terminus buid if it's not already running.
+    { 
+        "keys": ["ctrl+enter"], "command": "build",
+        "args": {
+            "build_system": "Packages/User/PythonREPL.sublime-build",
+            "variant": "",
+        },
+        "context": [
+            { "key": "terminus_tag.notexists", "operand": "python-repl" },
+            { "key": "selector", "operator": "equal", "operand": "source.python" },
+        ],
+    },
+
+    // Send the current selection or file content to the Terminus Python REPL,
+    // if it exists.
+    { 
+        "keys": ["ctrl+enter"], "command": "send_selection_to_terminus",
+        "args": { "tag": "python-repl" },
+        "context": [
+            { "key": "terminus_tag.exists", "operand": "python-repl" },
+            { "key": "selector", "operator": "equal", "operand": "source.python" },
+        ],
+    },
+
+    // Both close a Terminus tab and also use the Origami command to destroy the pane
+    // in one shot, it has two method, uncomment the config of selected to use, and
+    // comment the other one:
+    //   1. If you use the Multicommand package, use this binding to chain the
+    //      two required commands together.
+    //   2. If you don't use Multicommand package, then you can install the sample plugin
+    //      and use a binding like this to do the same thing.
+    { "keys": ["ctrl+shift+`"], "command": "multicommand",
+        "args": {
+            "commands": [
+                {
+                    "command": "terminus_close"
+                },
+                {
+                    "command": "destroy_pane",
+                    "args": {"direction": "self"}
+                }
+            ]
+        },
+        "context": [{ "key": "terminus_view"}]
+    },
+
+    // { "keys": ["ctrl+shift+`"], "command": "close_and_destroy",
+    //     "context": [{ "key": "terminus_view"}]
+    // },
+
+    // Close all files except the one currently being edited
+    { "keys": ["ctrl+alt+shift+w"], "command": "close_others_files" },
+]

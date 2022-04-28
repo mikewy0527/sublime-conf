@@ -1,0 +1,91 @@
+// Documentation at https://www.sublimetext.com/docs/color_schemes.html
+{
+    "variables":
+    {
+        "brown": "hsl(0, 59%, 50%)",
+        "darkorange": "hsl(33, 100%, 45%)",
+        "gold": "hsl(45, 60%, 65%)",
+        "lightcoral": "hsl(0, 79%, 72%)",
+        "peru": "hsl(30, 59%, 53%)",
+        "rosybrown": "hsl(0, 25%, 65%)",
+        "sienna": "hsl(19, 56%, 45%)",
+        "steelblue": "hsl(207, 50%, 45%)",
+        "tomato": "hsl(9, 100%, 64%)",
+    },
+    "globals":
+    {
+    },
+    "rules":
+    [
+        {
+            "name": "Label",
+            "scope": "entity.name.label",
+            "foreground": "var(brown)"
+        },
+        {
+            "name": "Number",
+            "scope": "constant.numeric",
+            "foreground": "var(brown)"
+        },
+        {
+            "name": "semantic-token Namespace",
+            "scope": "meta.semantic-token.namespace",
+            "foreground": "var(rosybrown)"
+        },
+        {
+            "name": "semantic-token Class",
+            "scope": "meta.semantic-token.class",
+            "foreground": "var(steelblue)"
+        },
+        {
+            "name": "semantic-token Struct",
+            "scope": "meta.semantic-token.struct",
+            "foreground": "var(steelblue)"
+        },
+        {
+            "name": "semantic-token Union",
+            "scope": "meta.semantic-token.union",
+            "foreground": "var(steelblue)"
+        },
+        {
+            "name": "semantic-token Enum",
+            "scope": "meta.semantic-token.enum",
+            "foreground": "var(steelblue)"
+        },
+        {
+            "name": "semantic-token Variable",
+            "scope": "meta.semantic-token.variable",
+            "foreground": "var(peru)"
+        },
+        {
+            "name": "semantic-token typeParameter",
+            "scope": "meta.semantic-token.typeparameter",
+            "foreground": "var(darkorange)"
+        },
+        {
+            "name": "semantic-token Type",
+            "scope": "meta.semantic-token.type",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "semantic-token Parameter",
+            "scope": "meta.semantic-token.parameter",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "semantic-token Property",
+            "scope": "meta.semantic-token.property",
+            "foreground": "var(sienna)"
+        },
+        {
+            "name": "semantic-token enumMember",
+            "scope": "meta.semantic-token.enummember",
+            "foreground": "var(tomato)"
+        },
+        {
+            "name": "semantic-token Macro",
+            "scope": "meta.semantic-token.macro",
+            "foreground": "var(lightcoral)"
+        },
+    ]
+}

@@ -1,0 +1,31 @@
+// Settings in here override those in "LSP/LSP.sublime-settings"
+{
+  "clients": {
+    "clangd": {
+      "enabled": true,
+      "command": [
+        "clangd",
+        "-j=6",
+        "--function-arg-placeholders=0",
+        "--header-insertion-decorators=1",
+        "--header-insertion=never",
+        "--background-index",
+        "--clang-tidy",
+        "--all-scopes-completion",
+        "--completion-style=detailed",
+        "--malloc-trim",
+        "--pch-storage=memory"
+      ],
+      "selector": ["source.c", "source.c++", "source.objc", "source.objc++"],
+      "auto_complete_selector": "punctuation.accessor | (meta.preprocessor.include string - punctuation.definition.string.end)",
+      "syntaxes": [
+        "Packages/C++/C.sublime-syntax",
+        "Packages/C++/C++.sublime-syntax",
+        "Packages/Objective-C/Objective-C.sublime-syntax",
+        "Packages/Objective-C/Objective-C++.sublime-syntax",
+      ],
+    },
+  },
+  "lsp_format_on_save": true,
+  "semantic_highlighting": true,
+}

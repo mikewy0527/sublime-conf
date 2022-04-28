@@ -1,0 +1,42 @@
+{
+    "target": "terminus_open",
+
+    // So terminus will re-use the same tab
+    "tag": "python",
+
+    // Provide a tab title
+    "title": "Python Custom",
+
+    // Don't auto-close the tab when the program ends
+    "auto_close": false,
+    "timeit": true,
+
+    // Make sure that no other tabs are selected, then select the tab to the
+    // left to create the window split.
+    "post_window_hooks": [
+        ["unselect_others"],
+        ["select_to_left"]
+    ],
+
+    "cmd": ["python3", "-u", "$file"],
+    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+    "selector": "source.python",
+
+    "env": {"PYTHONIOENCODING": "utf-8"},
+
+    "windows": {
+        "cmd": ["py", "-u", "$file"],
+    },
+
+    "variants":
+    [
+        {
+            "name": "Syntax Check",
+            "cmd": ["python3", "-m", "py_compile", "$file"],
+
+            "windows": {
+                "cmd": ["py", "-m", "py_compile", "$file"],
+            }
+        }
+    ]
+}

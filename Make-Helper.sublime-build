@@ -1,0 +1,20 @@
+{
+    "target": "makefile_build",
+    "cancel": {"kill": true},
+
+    "shell_cmd": "make -f \\${selected_makefile} file=\"${file}\" file_path=\"${file_path}\" file_base_name=\"${file_base_name}\"",
+    "file_regex": "^(..[^:\n]*):([0-9]+):?([0-9]+)?:? (.*)$",
+    "working_dir": "\\${selected_makefile_path}",
+
+    "selector": "source.makefile",
+    "syntax": "Packages/Makefile/Make Output.sublime-syntax",
+    "keyfiles": ["Makefile", "makefile"],
+
+    "variants":
+    [
+        {
+            "name": "Clean",
+            "shell_cmd": "make clean"
+        }
+    ]
+}

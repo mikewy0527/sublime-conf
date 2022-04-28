@@ -1,0 +1,30 @@
+[
+    { "caption": "-", "id": "folder_commands" },
+
+    { 
+        "caption": "Open in Terminus (Tab)", 
+        "command": "open_in_terminus", 
+        "args": {
+            "panel": false,
+            "dirs": []
+        } 
+    },
+
+    { 
+        "caption": "Open in Terminus (Panel)", 
+        "command": "open_in_terminus", 
+        "args": {
+            "panel": true,
+            "dirs": []
+        } 
+    },
+
+    {
+        "caption": "Build with this Makefile",
+        "command": "select_makefile",
+        "args": {
+            "files": []
+        },
+        "checkbox": true
+    },
+]
