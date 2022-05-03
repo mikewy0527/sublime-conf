@@ -4,7 +4,7 @@
     {
         "brown": "hsl(0, 59%, 50%)",
         "darkorange": "hsl(33, 100%, 45%)",
-        "gold": "hsl(45, 60%, 65%)",
+        "indianred": "hsl(0, 53%, 55%)",
         "lightcoral": "hsl(0, 79%, 72%)",
         "peru": "hsl(30, 59%, 53%)",
         "rosybrown": "hsl(0, 25%, 65%)",
@@ -85,7 +85,7 @@
         {
             "name": "semantic-token Macro",
             "scope": "meta.semantic-token.macro",
-            "foreground": "var(lightcoral)"
+            "foreground": "var(indianred)"
         },
     ]
 }
