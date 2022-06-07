@@ -1,0 +1,39 @@
+// Settings in here override those in "LSP-bash/LSP-bash.sublime-settings"
+
+{
+    // "command": ["node", "${server_path}", "start"],
+	"env": {
+        "HIGHLIGHT_PARSING_ERRORS": "1",
+		"SHELLCHECK_PATH": "shellcheck",
+	},
+	"initializationOptions": {
+        "linters": {
+            "shellcheck": {
+                "command": "shellcheck",
+                "args": ["--format=json", "-"],
+                "debounce": 100,
+                "formatLines": 1,
+                "offsetLine": 0,
+                "offsetColumn": 0,
+                "sourceName": "shellcheck",
+                "parseJson": {
+                    "line": "line",
+                    "column": "column",
+                    "endLine": "endLine",
+                    "endColumn": "endColumn",
+                    "security": "level",
+                    "message": "\\${message} [\\${code}]",
+                },
+                "securities": {
+                    "error": "error",
+                    "warning": "warning",
+                    "note": "info",
+                },
+            }
+        },
+        "formatters": {},
+        "filetypes": {
+            "shellscript": "shellcheck",
+        }
+    },
+}
