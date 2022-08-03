@@ -3,7 +3,7 @@
     "variables":
     {
         "blue": "hsl(210, 50%, 60%)",
-        "brown": "hsl(0, 59%, 50%)",
+        "brown": "hsl(0, 100%, 45%)",
         "crimson": "hsl(348, 83%, 47%)",
         "darkorange": "hsl(33, 100%, 45%)",
         "indianred": "hsl(0, 53%, 55%)",
@@ -17,7 +17,7 @@
         "rosybrown": "hsl(0, 25%, 65%)",
         "salmon": "hsl(6, 93%, 71%)",
         "sienna": "hsl(19, 56%, 45%)",
-        "steelblue": "hsl(207, 50%, 45%)",
+        "steelblue": "hsl(207, 50%, 48%)",
         "tomato": "hsl(9, 100%, 64%)",
     },
     "globals":
@@ -63,7 +63,7 @@
         {
             "name": "semantic-token Variable",
             "scope": "meta.semantic-token.variable",
-            "foreground": "var(peru)"
+            "foreground": "var(palevioletred)"
         },
         {
             "name": "semantic-token typeParameter",
@@ -83,17 +83,17 @@
         {
             "name": "semantic-token Property",
             "scope": "meta.semantic-token.property",
-            "foreground": "var(sienna)"
+            "foreground": "var(tomato)"
         },
         {
             "name": "semantic-token enumMember",
             "scope": "meta.semantic-token.enummember",
-            "foreground": "var(tomato)"
+            "foreground": "var(mediumpurple)"
         },
         {
             "name": "semantic-token Macro",
             "scope": "meta.semantic-token.macro",
-            "foreground": "var(indianred)"
+            "foreground": "var(lightcoral)"
         },
     ]
 }
