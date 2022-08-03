@@ -3,7 +3,8 @@
     "variables":
     {
         "blue": "hsl(210, 50%, 60%)",
-        "brown": "hsl(0, 100%, 45%)",
+        "brown": "hsl(0, 59%, 50%)",
+        "brownred": "hsl(0, 100%, 45%)",
         "crimson": "hsl(348, 83%, 47%)",
         "darkorange": "hsl(33, 100%, 45%)",
         "indianred": "hsl(0, 53%, 55%)",
@@ -28,12 +29,12 @@
         {
             "name": "Label",
             "scope": "entity.name.label",
-            "foreground": "var(brown)"
+            "foreground": "var(brownred)"
         },
         {
             "name": "Number",
             "scope": "constant.numeric",
-            "foreground": "var(brown)"
+            "foreground": "var(brownred)"
         },
         {
             "name": "semantic-token Namespace",
